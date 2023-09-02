@@ -23,7 +23,9 @@ const handleLoadData = async (categoryId) => {
     const singleCard = data.data;
     console.log(singleCard)
 
-   
+if(singleCard.length ===0){
+    iconHandler()
+}
     
 
     const cardContainer = document.getElementById('card-container')
@@ -77,6 +79,17 @@ const handleLoadData = async (categoryId) => {
 
 const handleBlog = ()=>{
     window.open('http://127.0.0.1:5500/blog.html')
+}
+
+
+const iconHandler = ()=>{
+    const iconContainer = document.getElementById('icon-container')
+    const div = document.createElement('div')
+    div.innerHTML = `<div id="icon-container" class="flex items-center justify-center" >
+    <img  src="Icon.png" >
+</div>
+    `
+    iconContainer.appendChild(div)
 }
 
 handleTube();
